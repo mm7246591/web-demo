@@ -17,13 +17,13 @@
     "noUnusedParameters": true,
     "experimentalDecorators": true,
     "lib": ["dom", "esnext"],
-    "types": ["vite/client"],
+    "types": ["vite/client","element-plus/global"],
     "typeRoots": ["./node_modules/@types/", "./types"],
     "noImplicitAny": false,
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   },
   "include": [
     "src/**/*.ts",

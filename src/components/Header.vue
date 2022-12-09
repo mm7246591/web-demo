@@ -118,7 +118,7 @@ watchEffect(() => {
 </script>
 
 <template>
-    <header class="md:hidden lg:w-full lg:h-[15vh]">
+    <header class="md:hidden lg:w-full lg:h-[10vh]">
         <div
             class="lg:w-full lg:h-full flex justify-evenly items-center lg:text-base xl:text-lg text-[#EB8C4A] font-bold">
             <div class="flex">

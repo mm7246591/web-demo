@@ -62,8 +62,8 @@ onMounted(() => {
 
 <template>
     <Header />
-    <div class="content relative w-full overflow-hidden">
-        <div v-if="isFavorite" class="w-full h-auto flex justify-evenly flex-wrap">
+    <div class="w-full overflow-hidden">
+        <div v-if="isFavorite" class="w-full h-full flex justify-evenly flex-wrap">
             <div v-for="student of filterStudent" :key="student.id"
                 class="flex flex-col items-center lg:my-[2vh] md:my-[2vh] lg:w-[25vw] md:w-[80vw] lg:mx-[0.5vw]">
                 <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleToWork(student.id)">
@@ -91,14 +91,14 @@ onMounted(() => {
             您尚未有任何收藏
         </div>
     </div>
-    <div class="w-full absolute bottom-0">
-        <div class="one absolute top-1/4 -left-20 -z-10">
+    <div class="w-full">
+        <div class="one absolute bottom-0 -left-20 -z-10">
             <img src="../assets/img/one.png" class="object-cover" alt="">
         </div>
         <div class="two absolute bottom-0 -left-20 -z-10">
             <img src="../assets/img/two.png" class="object-cover" alt="">
         </div>
-        <div class="three absolute  top-1/4 right-0 -z-10">
+        <div class="three absolute  bottom-0 right-0 -z-10">
             <img src="../assets/img/three.png" class="object-cover" alt="">
         </div>
         <div class="four absolute bottom-0 right-0 -z-10">
