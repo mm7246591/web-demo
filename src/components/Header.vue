@@ -3,7 +3,7 @@ import firebaseConfig from '@/config/firebaseConfig'
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { getDatabase, ref as dref, update, onValue } from "firebase/database";
 import { onMounted, ref, watchEffect } from 'vue';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { NDropdown, useMessage } from 'naive-ui'
 import { Dialog, showConfirmDialog } from 'vant';
 
@@ -12,6 +12,8 @@ const db = getDatabase();
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
+const route = useRoute()
+const router = useRouter()
 const message = useMessage()
 const search = ref<string>('')
 const userName = ref<string | null>(null)
@@ -35,6 +37,19 @@ const handleClickMenu = () => {
 
 const handleCancelMenu = () => {
     show.value = false
+}
+
+const handleSearch = () => {
+    const numberRegex = /^[0-9\s]*$/;
+    if (!search.value || numberRegex.test(search.value) === false) {
+        update(dref(db, 'search/'), {
+            input: ""
+        });
+        return
+    }
+    update(dref(db, 'search/'), {
+        input: search.value
+    });
 }
 
 const handleSignIn = async () => {
@@ -114,6 +129,14 @@ watchEffect(() => {
     if (height.value !== 0) {
         show.value = false
     }
+    router.beforeEach((to, from) => {
+        if (to.fullPath !== from.fullPath) {
+            update(dref(db, 'search/'), {
+                input: ""
+            });
+            return
+        }
+    })
 })
 </script>
 
@@ -121,9 +144,9 @@ watchEffect(() => {
     <header class="md:hidden lg:w-full lg:h-[10vh]">
         <div
             class="lg:w-full lg:h-full flex justify-evenly items-center lg:text-base xl:text-lg text-[#EB8C4A] font-bold">
-            <div class="flex">
-                <img src="../assets/img/member.png" class="w-[30px] h-[30px] lg:mx-[.5vw] object-cover cursor-pointer"
-                    @click="handleSignIn">
+            <div class="flex justify-center items-center pt-[20px]">
+                <img src="../assets/img/member.png"
+                    class="lg:w-[30px] lg:h-[30px] lg:mx-[.5vw] object-cover cursor-pointer" @click="handleSignIn">
                 <div v-if="userName">
                     <NDropdown trigger="click" :options="options" @select="handleWebSignOut">
                         <button>{{ userName
@@ -140,37 +163,40 @@ watchEffect(() => {
             </div>
             <RouterLink to="/vote">作品投票</RouterLink>
             <RouterLink to="/favorite">我的收藏</RouterLink>
-            <div class="search md:absolute top-0 right-0 ">
-                <div class="relative">
-                    <font-awesome-icon :icon="['fa', 'magnifying-glass']"
-                        class="absolute top-1/2 -translate-y-1/2 left-2 w-[18px] h-[18px] outline-none" />
-                    <input type="text" id="search" name="search" v-model="search" autofocus autocomplete="off"
-                        class="w-[249px] h-[30px] pl-[30px] rounded-[100px] border border-[#EB8C4A]">
-                </div>
+            <div class="relative pt-[20px]">
+                <font-awesome-icon :icon="['fa', 'magnifying-glass']"
+                    class="absolute top-1/2 left-2 w-[18px] h-[18px] outline-none" />
+                <input type="text" id="search" name="search" v-model="search" autocomplete="off"
+                    class="w-[249px] h-[30px] pl-[30px] rounded-[100px] border border-[#EB8C4A]" @input="handleSearch">
             </div>
         </div>
     </header>
-    <header class="lg:hidden md:flex items-center w-full h-[8vh] relative">
-        <font-awesome-icon :icon="['fa', 'bars']" class="md:w-[32px] md:h-[32px] mx-[2vw]" @click="handleClickMenu" />
+    <header class="lg:hidden md:w-full md:h-[8vh] ">
+        <div class="flex items-center">
+            <font-awesome-icon :icon="['fa', 'bars']" class="md:w-[32px] md:h-[32px] md:mx-[2vw] md:my-[2vh] "
+                @click="handleClickMenu" />
+            <div class="w-full text-center text-xl text-[#EB8C4A] font-bold">{{ route.meta.name }}</div>
+        </div>
         <transition v-show="show" name="slide" mode="out-in" appear>
             <div
-                class="flex flex-col justify-between items-center fixed top-0 md:w-[200px] sm:!w-[180px] h-full md:text-lg sm:!text-base bg-[lightgray] z-30">
-                <nav class="flex flex-col ">
-                    <RouterLink v-if="userName" to="">
-                        <font-awesome-icon :icon="['fa', 'user']" class="md:w-[16px] md:h-[16px]"
-                            @click="handleClickMenu" /> {{ userName }}
-                    </RouterLink>
-                    <RouterLink to="/">網頁期末展</RouterLink>
-                    <RouterLink to="/c1">科技組</RouterLink>
-                    <RouterLink to="/c2">設計組</RouterLink>
-                    <RouterLink to="/vote">投票</RouterLink>
+                class="md:w-[200px] sm:!w-[180px] h-full flex flex-col justify-between items-center fixed top-0 md:text-lg sm:!text-base bg-[white] text-[#EB8C4A] font-bold z-30">
+                <nav class="flex flex-col md:mt-[2vh]">
+                    <div class="flex justify-center items-center md:my-[3vh]">
+                        <img src="../assets/img/member.png"
+                            class="md:w-[24px] md:h-[24px] md:mx-auto object-cover cursor-pointer"
+                            @click="handleSignIn">
+                        <div v-if="userName">
+                            {{ userName }}
+                        </div>
+                    </div>
+                    <RouterLink to="/">全部作品</RouterLink>
+                    <RouterLink to="/c1">科技組作品</RouterLink>
+                    <RouterLink to="/c2">設計組作品</RouterLink>
+                    <RouterLink to="/vote">作品投票</RouterLink>
                     <RouterLink to="/favorite">我的收藏</RouterLink>
                 </nav>
                 <div v-if="userName" class="h-[10vh]">
                     <div @click="handlePhoneSignOut">{{ '登出' }}</div>
-                </div>
-                <div v-else class="h-[10vh]">
-                    <div @click="handleSignIn">{{ '登入' }}</div>
                 </div>
                 <Dialog :overlay="false">
                 </Dialog>

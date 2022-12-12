@@ -13,8 +13,6 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "echarts";
 import ECharts from "vue-echarts";
-import ElementPlus from "element-plus";
-import "element-plus/dist/index.css";
 
 library.add(faMagnifyingGlass, faBars);
 library.add(faStar as any);
@@ -26,7 +24,6 @@ const bootstarap = async () => {
   setupStore(app);
   app.component("font-awesome-icon", FontAwesomeIcon);
   app.component("v-chart", ECharts);
-  app.use(ElementPlus);
   app.mount("#app");
 };
 

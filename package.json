@@ -16,7 +16,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "echarts": "^5.4.0",
-    "element-plus": "^2.2.26",
     "firebase": "^9.14.0",
     "firebase-tools": "^11.16.1",
     "naive-ui": "^2.34.2",

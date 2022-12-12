@@ -14,7 +14,7 @@ const routes: RouteRecordRaw[] = [
     name: "C1",
     component: () => import("@/views/C1.vue"),
     meta:{
-      name:'科技組'
+      name:'科技組作品'
     }
   },
   {
@@ -22,7 +22,7 @@ const routes: RouteRecordRaw[] = [
     name: "C2",
     component: () => import("@/views/C2.vue"),
     meta:{
-      name:'設計組'
+      name:'設計組作品'
     }
   },
   {

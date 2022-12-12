@@ -12,7 +12,6 @@ const message = useMessage()
 const selectVal = ref<string | null>(null)
 const options = ref<SelectOption[] | SelectGroupOption[] | any[]>([])
 const items = ref<any[]>([])
-const colors = ref<string[]>(['#ee6666', '#fc8452', '#fac858', '#91cc75', '#73c0de', '#5470c6', '#9a60b4'])
 const isVoted = ref<boolean | null>(null)
 const option = ref<any>({
     legend: {
@@ -91,7 +90,7 @@ const getStudents = () => {
             const student = snapshot.val();
             if (student) {
                 option.value.xAxis.data.push(`${student.studentID}${student.name}`)
-                option.value.series.data.push({ name: `${student.studentID}${student.name}`, value: student.vote, itemStyle: { color: colors.value[i - 1] } })
+                option.value.series.data.push({ name: `${student.studentID}${student.name}`, value: student.vote })
                 items.value.push({ name: `${i}`, vote: student.vote })
                 options.value.push({ label: `${student.studentID}${student.name}`, value: `${i}` })
             }
@@ -109,9 +108,35 @@ onMounted(() => {
         <v-chart class="lg:w-[1000px] md:w-[300px] lg:h-[30vh] md:h-[30vh] mx-auto" :option="option" />
     </div>
     <div class="flex justify-center items-center lg:w-[500px] md:w-[300px] lg:h-[30vh] mx-auto md:my-[2vh]">
-        <NSelect v-model:value="selectVal" :options="options" :filterable="true" placeholder="選擇組別"
+        <NSelect v-model:value="selectVal" :options="options" :filterable="true" placeholder="一人限投一票"
             class="lg:w-[300px] lg:mx-[2vw] md:mx-[2vw]" />
         <NButton type="tertiary" @click="handleSubmit">送出</NButton>
+    </div>
+    <div class="w-full">
+        <div class="absolute bottom-0 -left-[10%] -z-10">
+            <img src="../assets/img/five.png" class="w-[20vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 -left-0 -z-20">
+            <img src="../assets/img/six.png" class="w-[20vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 left-[15%] -z-10 ">
+            <img src="../assets/img/seven.png" class="w-[30vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 left-[40%] -z-20">
+            <img src="../assets/img/eight.png" class="w-[20vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 right-[25%] -z-10">
+            <img src="../assets/img/nine.png" class="w-[20vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 right-[18%] -z-10">
+            <img src="../assets/img/ten.png" class="w-[15vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 right-[5%] -z-20">
+            <img src="../assets/img/eleven.png" class="w-[20vw] object-cover" alt="">
+        </div>
+        <div class="absolute bottom-0 right-0 -z-10">
+            <img src="../assets/img/twelve.png" class="w-[15vw] object-cover" alt="">
+        </div>
     </div>
 </template>
 
