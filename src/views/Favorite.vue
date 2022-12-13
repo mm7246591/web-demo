@@ -96,7 +96,7 @@ watchEffect(() => {
     if (!filterStudent.value) {
         return
     }
-    if (filterStudent.value?.length <= 0) {
+    if (filterStudent.value?.length <= 0 && currentPage.value > 1) {
         currentPage.value -= 1
     }
     onValue(dref(db, 'search/'), (snapshot) => {
@@ -122,7 +122,7 @@ watchEffect(() => {
                     <img :src="student.img" class="object-cover w-full h-full">
                 </div>
             </div>
-            <div class="w-full flex justify-between items-center">
+            <div class="w-full flex justify-between items-center mt-[1vh]">
                 <div class="team-mate md:text-base lg:text-sm xl:text-base">{{
                         student.name
                 }}</div>

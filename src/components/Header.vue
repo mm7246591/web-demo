@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import firebaseConfig from '@/config/firebaseConfig'
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { getDatabase, ref as dref, update, onValue } from "firebase/database";
+import { getDatabase, ref as dref, update } from "firebase/database";
 import { onMounted, ref, watchEffect } from 'vue';
 import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { NDropdown, useMessage } from 'naive-ui'
@@ -61,10 +61,10 @@ const handleSignIn = async () => {
                 email: result.user.email,
             });
             localStorage.setItem("user", JSON.stringify(result.user.displayName))
+            userName.value = result.user.displayName
         }).catch((error) => {
             console.log(error)
         });
-    getUser()
 }
 
 const handleWebSignOut = () => {
@@ -110,18 +110,7 @@ const handlePhoneSignOut = async () => {
         });
 }
 
-const getUser = () => {
-    const user = dref(db, 'user/');
-    onValue(user, (snapshot) => {
-        const data = snapshot.val();
-        if (data) {
-            userName.value = data.name
-        }
-    });
-}
-
 onMounted(() => {
-    getUser()
     localStorage.user === undefined ? userName.value = "" : userName.value = JSON.parse(localStorage.getItem("user") as string)
     window.addEventListener("scroll", handleScroll);
 })
@@ -175,7 +164,7 @@ watchEffect(() => {
         <div class="flex items-center">
             <font-awesome-icon :icon="['fa', 'bars']" class="md:w-[32px] md:h-[32px] md:mx-[2vw] md:my-[2vh] "
                 @click="handleClickMenu" />
-            <div class="w-full text-center text-xl text-[#EB8C4A] font-bold">{{ route.meta.name }}</div>
+            <div class="w-full text-end text-lg text-[#EB8C4A] font-bold mr-[2vw]">{{ `/${route.meta.name}` }}</div>
         </div>
         <transition v-show="show" name="slide" mode="out-in" appear>
             <div

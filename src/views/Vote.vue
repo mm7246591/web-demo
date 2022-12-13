@@ -89,10 +89,10 @@ const getStudents = () => {
         onValue(students, (snapshot) => {
             const student = snapshot.val();
             if (student) {
-                option.value.xAxis.data.push(`${student.studentID}${student.name}`)
-                option.value.series.data.push({ name: `${student.studentID}${student.name}`, value: student.vote })
+                option.value.xAxis.data.push(`${student.studentID} ${student.name}`)
+                option.value.series.data.push({ name: `${student.studentID} ${student.name}`, value: student.vote })
                 items.value.push({ name: `${i}`, vote: student.vote })
-                options.value.push({ label: `${student.studentID}${student.name}`, value: `${i}` })
+                options.value.push({ label: `${student.studentID} ${student.name}`, value: `${i}` })
             }
         });
     }
@@ -108,7 +108,7 @@ onMounted(() => {
         <v-chart class="lg:w-[1000px] md:w-[300px] lg:h-[30vh] md:h-[30vh] mx-auto" :option="option" />
     </div>
     <div class="flex justify-center items-center lg:w-[500px] md:w-[300px] lg:h-[30vh] mx-auto md:my-[2vh]">
-        <NSelect v-model:value="selectVal" :options="options" :filterable="true" placeholder="一人限投一票"
+        <NSelect v-model:value="selectVal" :options="options" :filterable="true" placeholder="每人限投一票"
             class="lg:w-[300px] lg:mx-[2vw] md:mx-[2vw]" />
         <NButton type="tertiary" @click="handleSubmit">送出</NButton>
     </div>
