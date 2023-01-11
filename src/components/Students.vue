@@ -40,7 +40,7 @@ const handleAddFavorite = (id: string) => {
 }
 
 const handleToWork = (id: string) => {
-    router.push(`/${id}`)
+    router.push({ name: 'Work', params: { id } })
 }
 
 const filterStudent = computed(() => {
@@ -138,14 +138,14 @@ watchEffect(() => {
     <div class="content flex justify-evenly items-center flex-wrap">
         <div v-for="student of filterStudent" :key="student.id"
             class="flex flex-col justify-center items-center lg:my-[2vh] md:my-[2vh] lg:w-[25vw] md:w-[80vw] lg:mx-[0.5vw]">
-            <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleToWork(student.id)">
+            <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleToWork(student.studentID)">
                 <div class="img">
                     <img :src="student.img" class="object-cover w-full h-full">
                 </div>
             </div>
             <div class="w-full flex justify-between items-center mt-[1vh]">
                 <div class="team-mate md:text-base lg:text-sm xl:text-base">{{
-                        student.name
+                    student.name
                 }}</div>
                 <div v-if="student.favorite">
                     <img src="../assets/img/fill-heart.png" class="w-full h-full cursor-pointer"
