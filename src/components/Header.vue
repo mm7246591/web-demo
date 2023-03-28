@@ -3,7 +3,7 @@ import firebaseConfig from '@/config/firebaseConfig'
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { getDatabase, ref as dref, update } from "firebase/database";
 import { onMounted, ref, watchEffect } from 'vue';
-import { RouterLink, useRoute, useRouter } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 import { NDropdown, useMessage } from 'naive-ui'
 import { Dialog, showConfirmDialog } from 'vant';
 
@@ -13,7 +13,6 @@ const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
 const route = useRoute()
-const router = useRouter()
 const message = useMessage()
 const search = ref<string>('')
 const userName = ref<string | null>(null)
@@ -55,7 +54,7 @@ const handleSearch = () => {
 const handleSignIn = async () => {
     await signInWithPopup(auth, provider)
         .then((result) => {
-            update(dref(db, 'user/'), {
+            update(dref(db, `user/${result.user.displayName}`), {
                 uid: result.user.uid,
                 name: result.user.displayName,
                 email: result.user.email,
@@ -70,7 +69,7 @@ const handleSignIn = async () => {
 const handleWebSignOut = () => {
     message.success("已成功登出！")
     signOut(auth).then(() => {
-        update(dref(db, 'user/'), {
+        update(dref(db, `user/${userName.value}`), {
             uid: null,
             name: null,
             email: null
@@ -91,7 +90,7 @@ const handlePhoneSignOut = async () => {
     })
         .then(() => {
             signOut(auth).then(() => {
-                update(dref(db, 'user/'), {
+                update(dref(db, `user/${userName.value}`), {
                     uid: null,
                     name: null,
                     email: null
@@ -111,6 +110,13 @@ const handlePhoneSignOut = async () => {
 }
 
 onMounted(() => {
+    if (window.name == "") {
+        window.name = "isReload";
+    } else if (window.name == "isReload") {
+        update(dref(db, 'search/'), {
+            input: ""
+        });
+    }
     localStorage.user === undefined ? userName.value = "" : userName.value = JSON.parse(localStorage.getItem("user") as string)
     window.addEventListener("scroll", handleScroll);
 })
@@ -118,14 +124,6 @@ watchEffect(() => {
     if (height.value !== 0) {
         show.value = false
     }
-    router.beforeEach((to, from) => {
-        if (to.fullPath !== from.fullPath) {
-            update(dref(db, 'search/'), {
-                input: ""
-            });
-            return
-        }
-    })
 })
 </script>
 
@@ -134,14 +132,15 @@ watchEffect(() => {
         <div
             class="lg:w-full lg:h-full flex justify-evenly items-center lg:text-base xl:text-lg text-[#EB8C4A] font-bold">
             <div class="flex justify-center items-center pt-[20px]">
-                <img src="../assets/img/member.png"
-                    class="lg:w-[30px] lg:h-[30px] lg:mx-[.5vw] object-cover cursor-pointer" @click="handleSignIn">
                 <div v-if="userName">
                     <NDropdown trigger="click" :options="options" @select="handleWebSignOut">
-                        <button>{{ userName
+                        <button>{{
+                            userName
                         }}</button>
                     </NDropdown>
                 </div>
+                <img v-else src="../assets/img/member.png"
+                    class="lg:w-[30px] lg:h-[30px] lg:mx-[.5vw] object-cover cursor-pointer" @click="handleSignIn">
             </div>
             <RouterLink to="/">全部作品</RouterLink>
             <RouterLink to="/c1">科技組作品</RouterLink>
@@ -171,11 +170,13 @@ watchEffect(() => {
                 class="md:w-[200px] sm:!w-[180px] h-full flex flex-col justify-between items-center fixed top-0 md:text-lg sm:!text-base bg-[white] text-[#EB8C4A] font-bold z-30">
                 <nav class="flex flex-col md:mt-[2vh]">
                     <div class="flex justify-center items-center md:my-[3vh]">
-                        <img src="../assets/img/member.png"
-                            class="md:w-[24px] md:h-[24px] md:mx-auto object-cover cursor-pointer"
-                            @click="handleSignIn">
                         <div v-if="userName">
                             {{ userName }}
+                        </div>
+                        <div v-else>
+                            <img src="../assets/img/member.png"
+                                class="md:w-[24px] md:h-[24px] md:mx-auto object-cover cursor-pointer"
+                                @click="handleSignIn">
                         </div>
                     </div>
                     <RouterLink to="/">全部作品</RouterLink>
