@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import firebaseConfig from '@/config/firebaseConfig'
-import { getDatabase, ref as dref, onValue } from "firebase/database";
+import { getDatabase, ref as dref, onValue, update } from "firebase/database";
 import { ref, computed, onMounted, watchEffect } from 'vue'
 import { students } from '@/util/global-data'
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import Header from "./Header.vue";
 import { NPagination } from 'naive-ui'
 
@@ -16,11 +16,11 @@ interface Student {
     studentID: string,
     img: string,
     name: string,
+    link: string
     favorite: boolean
 }
 
 const route = useRoute()
-const router = useRouter()
 
 const data = ref<Student[]>([])
 const currentPage = ref<number>(1)
@@ -37,10 +37,6 @@ const handleAddFavorite = (id: string) => {
     localStorage.setItem("favorite", JSON.stringify("true"))
     localStorage.setItem("students", JSON.stringify(newData))
     getData()
-}
-
-const handleToWork = (id: string) => {
-    router.push({ name: 'Work', params: { id } })
 }
 
 const filterStudent = computed(() => {
@@ -88,6 +84,12 @@ const handlePage = (page: number) => {
     currentPage.value = page;
 };
 
+const handleRoute = () => {
+    update(dref(db, 'search/'), {
+        input: ""
+    });
+}
+
 const getData = () => {
     c1.value = 0
     c2.value = 0
@@ -121,12 +123,15 @@ watchEffect(() => {
         else {
             if (route.meta.name === '全部作品') {
                 page.value = Math.ceil(data.value.length / pageSize.value)
+                input.value = search.input
             }
             else if (route.meta.name === '科技組作品') {
                 page.value = Math.ceil(c1.value / pageSize.value)
+                input.value = search.input
             }
             else if (route.meta.name === '設計組作品') {
                 page.value = Math.ceil(c2.value / pageSize.value)
+                input.value = search.input
             }
         }
     });
@@ -138,10 +143,13 @@ watchEffect(() => {
     <div class="content flex justify-evenly items-center flex-wrap">
         <div v-for="student of filterStudent" :key="student.id"
             class="flex flex-col justify-center items-center lg:my-[2vh] md:my-[2vh] lg:w-[25vw] md:w-[80vw] lg:mx-[0.5vw]">
-            <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleToWork(student.studentID)">
-                <div class="img">
-                    <img :src="student.img" class="object-cover w-full h-full">
-                </div>
+            <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleRoute">
+                <a v-if="student.link" :href="student.link">
+                    <img :src="student.img" class="object-cover w-full h-full" />
+                </a>
+                <a v-else>
+                    <img :src="student.img" class="object-cover w-full h-full" alt="未交作業" />
+                </a>
             </div>
             <div class="w-full flex justify-between items-center mt-[1vh]">
                 <div class="team-mate md:text-base lg:text-sm xl:text-base">{{
