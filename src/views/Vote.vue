@@ -12,7 +12,6 @@ const message = useMessage()
 const selectVal = ref<string | null>(null)
 const options = ref<SelectOption[] | SelectGroupOption[] | any[]>([])
 const items = ref<any[]>([])
-const isVoted = ref<boolean | null>(null)
 const option = ref<any>({
     legend: {
         itemStyle: { color: '' }
@@ -51,33 +50,36 @@ const option = ref<any>({
 )
 
 const handleSubmit = () => {
-    const user = dref(db, 'user/');
-    onValue(user, (snapshot) => {
-        const data = snapshot.val();
-        if (data) {
-            isVoted.value = data.isVoted
-        }
-    });
-    if (localStorage.user === undefined) {
+    if (!JSON.parse(localStorage.getItem('user') as string)) {
         message.warning("請先登入")
         return
     }
-    else if (isVoted.value) {
-        message.warning("您已投過票")
-        return
-    }
-    items.value.forEach(item => {
-        if (item.name === selectVal.value) {
-            update(dref(db, `students/${selectVal.value}`), {
-                vote: item.vote += 1
-            });
+    const user = dref(db, `user/${JSON.parse(localStorage.getItem('user') as string)}`);
+    onValue(user, async (snapshot) => {
+        const data = snapshot.val();
+        if (data.isVoted) {
+            message.warning("您已投過票")
+            return
         }
-    })
-    update(dref(db, 'user/'), {
-        isVoted: true
+        if (!data.isVoted) {
+            items.value.forEach(item => {
+                if (item.name === selectVal.value) {
+                    update(dref(db, `students/${selectVal.value}`), {
+                        vote: item.vote += 1
+                    });
+                }
+            })
+            message.success("投票成功")
+            await update(dref(db, `user/${JSON.parse(localStorage.getItem('user') as string)}`), {
+                isVoted: true
+            });
+            selectVal.value = null
+            await getStudents()
+            return
+        }
+    }, {
+        onlyOnce: true
     });
-    selectVal.value = null
-    getStudents()
 }
 
 const getStudents = () => {
