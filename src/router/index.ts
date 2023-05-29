@@ -42,11 +42,6 @@ const routes: RouteRecordRaw[] = [
     }
   },
   {
-    path: "/:id",
-    name: "Work",
-    component: () => import("@/views/Work.vue"),
-  },
-  {
     path: "/:path(.*)*",
     name: "error-page",
     redirect: "/",

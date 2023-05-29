@@ -128,9 +128,9 @@ watchEffect(() => {
 </script>
 
 <template>
-    <header class="md:hidden lg:w-full lg:h-[10vh]">
+    <header class="md:hidden lg:w-full lg:h-[10vh] mb-[1vh]">
         <div
-            class="lg:w-full lg:h-full flex justify-evenly items-center lg:text-base xl:text-lg text-[#EB8C4A] font-bold">
+            class="lg:w-full lg:h-full flex justify-evenly items-center lg:text-base xl:text-lg text-[rgb(84,112,198)] font-bold">
             <div class="flex justify-center items-center pt-[20px]">
                 <div v-if="userName">
                     <NDropdown trigger="click" :options="options" @select="handleWebSignOut">
@@ -155,7 +155,8 @@ watchEffect(() => {
                 <font-awesome-icon :icon="['fa', 'magnifying-glass']"
                     class="absolute top-1/2 left-2 w-[18px] h-[18px] outline-none" />
                 <input type="text" id="search" name="search" v-model="search" autocomplete="off"
-                    class="w-[249px] h-[30px] pl-[30px] rounded-[100px] border border-[#EB8C4A]" @input="handleSearch">
+                    class="w-[249px] h-[30px] pl-[30px] rounded-[100px] border border-[rgb(84,112,198)]"
+                    @input="handleSearch">
             </div>
         </div>
     </header>
@@ -163,11 +164,11 @@ watchEffect(() => {
         <div class="flex items-center">
             <font-awesome-icon :icon="['fa', 'bars']" class="md:w-[32px] md:h-[32px] md:mx-[2vw] md:my-[2vh] "
                 @click="handleClickMenu" />
-            <div class="w-full text-end text-lg text-[#EB8C4A] font-bold mr-[2vw]">{{ `/${route.meta.name}` }}</div>
+            <div class="w-full text-end text-lg text-[rgb(84,112,198)] font-bold mr-[2vw]">{{ `/${route.meta.name}` }}</div>
         </div>
         <transition v-show="show" name="slide" mode="out-in" appear>
             <div
-                class="md:w-[200px] sm:!w-[180px] h-full flex flex-col justify-between items-center fixed top-0 md:text-lg sm:!text-base bg-[white] text-[#EB8C4A] font-bold z-30">
+                class="md:w-[200px] sm:!w-[180px] h-full flex flex-col justify-between items-center fixed top-0 right-0 md:text-lg sm:!text-base bg-[white] text-[rgb(84,112,198)] font-bold z-30">
                 <nav class="flex flex-col md:mt-[2vh]">
                     <div class="flex justify-center items-center md:my-[3vh]">
                         <div v-if="userName">
@@ -208,7 +209,7 @@ nav>a {
 }
 
 .slide-enter-from {
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 
 .slide-leave-active {
@@ -216,7 +217,7 @@ nav>a {
 }
 
 .slide-leave-to {
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 
 @media (min-width:1024px) {
@@ -229,7 +230,7 @@ nav>a {
 
     .router-link-exact-active {
         background: url('../assets/img/Cloud.png') no-repeat top center;
-        border-bottom: 3px solid #FF9898;
+        border-bottom: 3px solid lightblue;
     }
 
     .animate-one {

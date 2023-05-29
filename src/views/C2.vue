@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import Students from '@/components/Students.vue';
+import Groups from '@/components/Groups.vue';
 </script>
 
 <template>
-    <Students />
+    <Groups />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
