@@ -154,7 +154,7 @@ watchEffect(() => {
                     {{ group.number }}
                 </div>
             </div>
-            <div class="w-full flex justify-between items-center mt-[1vh]">
+            <div class="w-full flex justify-between  mt-[1vh]">
                 <div class="team-mate w-[90%] md:text-base lg:text-sm">{{
                     group.name
                 }}</div>

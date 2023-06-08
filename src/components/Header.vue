@@ -139,8 +139,11 @@ watchEffect(() => {
                         }}</button>
                     </NDropdown>
                 </div>
-                <img v-else src="../assets/img/member.png"
-                    class="lg:w-[30px] lg:h-[30px] lg:mx-[.5vw] object-cover cursor-pointer" @click="handleSignIn">
+                <div v-else class="flex">
+                    <img src="../assets/img/member.png"
+                        class="lg:w-[30px] lg:h-[30px] lg:mx-[.5vw] object-cover cursor-pointer" @click="handleSignIn">
+                    <div class="cursor-pointer" @click="handleSignIn">登入</div>
+                </div>
             </div>
             <RouterLink to="/">全部作品</RouterLink>
             <RouterLink to="/c1">科技組作品</RouterLink>
@@ -176,7 +179,7 @@ watchEffect(() => {
                         </div>
                         <div v-else>
                             <img src="../assets/img/member.png"
-                                class="md:w-[24px] md:h-[24px] md:mx-auto object-cover cursor-pointer"
+                                class="md:w-[32px] md:h-[32px] md:mx-auto object-cover cursor-pointer"
                                 @click="handleSignIn">
                         </div>
                     </div>
