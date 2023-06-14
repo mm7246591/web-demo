@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFUxME</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        a{
+                font-size: 20px;
+                color: white;
+
+            }
+        
+        .container{
+            height: 100%;
+            background-color: rgb(139, 136, 139);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+           
+      }
+    
+        .header{
+            background: center / cover no-repeat url(header.jpg);
+            opacity: 100%;
+             width: 100%;
+             height: 600px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             font-size: 110px;
+             color: rgb(249, 248, 250);
+             image-resolution: 100%;
+             
+        }
+        .nav{
+            background-color: rgb(129, 126, 126);
+                display: flex;
+                justify-content: space-around;
+                position: fixed;
+                top: 0px;
+                width: 100%;
+                color: rgb(254, 254, 254);
+        }
+        .nav_item{
+                background-color: rgb(67, 67, 68);
+                border: 2px solid rgb(186, 185, 187);
+                flex-basis: 100%;
+                font-size: 24px;
+                padding: 5px 0;
+        }
+        .myDiv{
+            background-color: rgb(137, 137, 139);
+            text-align: center;
+            color: rgb(99, 94, 99);
+           
+        }
+        a{
+            text-decoration: none; 
+        }
+        .myDiv:hover{
+            background-color: rgb(194, 199, 199);
+            
+        }
+
+        .subGroupName{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color:rgb(67, 67, 68);
+                font-size: 30px;
+                color: rgb(192, 189, 189);
+                position: sticky;
+                top: 35px;
+                   
+        }
+            .footer{
+                width: 100%;
+                height: 8vh;
+                font-size: 15px;
+                background-color: rgb(116, 115, 117);
+                text-align: center;
+                position: sticky;
+                bottom: 0px;
+                
+            }
+            .article .group .subGroup:nth-child(2){
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+            }
+            .subItem_img{
+                flex-basis: calc(100%/6);
+                
+            }
+            .subItem_img:hover{
+                border: 5px dashed  rgb(250, 247, 250);
+                opacity: 70%;
+            }
+            
+
+            .subItem img{
+                width: 100%;
+                height: 100%;
+                border:5px solid rgb(67, 67, 68);
+                border-radius:10px 10px 10px 10px;
+                
+            
+            }
+
+            .article .group .subGroup:nth-child(2) .subItem:last-child{
+                flex-basis: 100%;
+            }
+            .home{
+                width: 16vh;
+                height: 13vh;
+                font-size: 13px;
+                background-color: rgb(186, 184, 189);
+                text-align: center;
+                position: fixed;
+                bottom: 9vh;
+                border-radius: 20%;
+                text-align: center;
+                background-color: rgb(55, 53, 53);
+                justify-content: space-around;
+                display: flex;
+                border: 6px solid rgb(240, 237, 237);
+                padding: 5px 0;
+                justify-content: center;
+            align-items: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div class="header">PERFU x ME</div>
+     
+     <div class="nav">
+        <div class="nav_item"><div class="myDiv"><a href="replica.html">Replica</a></div></div>
+        <div class="nav_item"><div class="myDiv"><a href="gucci.html">Gucci</a></div></div>
+        <div class="nav_item"><div class="myDiv"><a href="guerlain.html">Guerlain</a></div></div>
+        <div class="nav_item"><div class="myDiv"><a href="versace.html">Versace</a></div></div>
+        <div class="nav_item"><div class="myDiv"><a href="jomalone.html">JoMalone</a></div></div>
+        <div class="nav_item"><div class="myDiv"><a href="acqua.html">Acqua Di Parma</a></div></div>
+     </div>
+</div>
+     <div class="article">
+        <div class="group">
+            <div class="subGroupName">Perfime Is A Story In Odour Sometimes Poetry In Memories...</div>
+    
+      <div class="subGroup">
+            
+                <div class="subItem subItem_img"><img src="replica.jpg" alt=""></div>
+                <div class="subItem subItem_img"><img src="versace.JPG" alt=""></div>
+           
+                <div class="subItem subItem_img"><img src="gucci.JPG" alt=""></div>
+                <div class="subItem subItem_img"><img src="jomalone.JPG" alt=""></div> 
+       
+        
+                <div class="subItem subItem_img"><img src="guerlain.JPG" alt=""></div> 
+                <div class="subItem subItem_img"><img src="acqua.JPG" alt=""></div>
+                <div class="subItem subItem_img subItem_img_last"><img src="replica.jpg" alt=""></div> 
+                
+        
+    </div>
+    </div>
+        
+           
+    
+
+
+<div class="footer">Members:<p>1103249 yiponhang: onhang1030@yahoo.com</p>
+    <p>1111829 JoanneChuang: joannechuang1021@gmail.com </p>
+    <div class="home"><a href="member.html">MEMBERS</a></div>    
+    
+
+</div>
+
+<script>
+    let images;
+    window.onload = function(){
+        images = document.getElementsByTagName('img');
+        images[0].addEventListener('click',function(){
+            images[images.length-1].src= images[0].src;
+            images[6].src = this.src;
+        })
+        images[1].addEventListener('click' , function(){
+            images[images.length-1].src= images[1].src;
+            images[6].src = this.src;
+
+        });
+        images[2].addEventListener('click' , function(){
+            images[images.length-1].src= images[1].src;
+            images[6].src = this.src;
+
+        });
+        images[3].addEventListener('click' , function(){
+            images[images.length-1].src= images[1].src;
+            images[6].src = this.src;
+
+        });
+        images[4].addEventListener('click' , function(){
+            images[images.length-1].src= images[1].src;
+            images[6].src = this.src;
+
+        });
+        images[5].addEventListener('click' , function(){
+            images[images.length-1].src= images[1].src;
+            images[6].src = this.src;
+
+        });
+       
+        images[6].addEventListener('click',function(){
+            images[images.length-1].src= images[6].src;
+            images[6].src = this.src;
+        });
+        }
+
+</script>
+</body>
+</html>

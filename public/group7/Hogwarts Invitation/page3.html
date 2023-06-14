@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建議配備</title>
+    <link rel="shortcut icon" href="./assets/media/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/pageStyle.css">
+    <link rel="stylesheet" href="./assets/css/page3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="item">
+            <a href="index.html">
+                <div class="top"></div>
+            </a>
+            <iframe id="audioFrame" src="./audio.html" frameborder="0"></iframe>
+            <div class="manu" onmouseover="switchMenu( this, 'SubMenu', 'MouseOver' )" onmouseout="hideMenu()">
+                <canvas id="myCanvas" width="50" height="50"></canvas>
+                <div id="SubMenu" class="sub-menu">
+                    <div class="page1Manu">
+                        <div><a href="page1_2.html">捏臉系統</a></div>
+                        <div><a href="page1_4.html">天賦系統</a></div>
+                    </div>
+                    <div><a href="page2.html">媒體牆</a></div>
+                    <div><a href="page3.html">建議配備</a></div>
+                    <div><a href="page4.html">開發商簡介</a></div>
+                    <div><a href="page5.html">購買連結</a></div>
+                    <div><a href="page6.html" >關於我們</a></div>
+                </div>
+        </header>
+        <main class="item">
+            <div class="spec-form">
+                <div class="spec-header">
+                    電腦建議配備
+                </div>
+                <!-- <div class="line">
+                    <img src="./assets/media/img/line.svg" alt="">
+                </div> -->
+                <hr>
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>
+                                <p class="active" id="low-btn">最低/低規格</p>
+                                <p id="high-btn">建議/高規格</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr>
+                            <th>OS</th>
+                            <td>64-位元 Windows 10</td>
+                        </tr>
+                        <tr>
+                            <th>CPU</th>
+                            <td>Intel Core i5-6600 (3.3 GHz) 或 AMD Ryzen 5 1400 (3.2 GHz)</td>
+                        </tr>
+                        <tr>
+                            <th>RAM</th>
+                            <td>16 GB</td>
+                        </tr>
+                        <tr>
+                            <th>GPU</th>
+                            <td>NVIDIA GeForce GTX 960 4GB or AMD Radeon RX 470 4GB</td>
+                        </tr>
+                        <tr>
+                            <th>DX 版本</th>
+                            <td>DX 12</td>
+                        </tr>
+                        <tr>
+                            <th>儲存體</th>
+                            <td>85 GB HDD</td>
+                        </tr>
+                        <tr>
+                            <th>附註</th>
+                            <td>SSD（首選）、HDD（支援）、720p / 30 fps、低品質設定</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer class="item">
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
+<script src="./assets/js/menu.js"></script>
+<script src="./assets/js/page3.js"></script>

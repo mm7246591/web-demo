@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捏臉系統</title>
+    <link rel="shortcut icon" href="./assets/media/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/pageStyle.css">
+    <link rel="stylesheet" href="./assets/css/page1-2Style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="item">
+            <a href="index.html">
+                <div class="top"></div>
+            </a>
+            <iframe id="audioFrame" src="./audio.html" frameborder="0"></iframe>
+            <div class="manu" onmouseover="switchMenu( this, 'SubMenu', 'MouseOver' )" onmouseout="hideMenu()">
+                <canvas id="myCanvas" width="50" height="50"></canvas>
+                <div id="SubMenu" class="sub-menu">
+                    <div class="page1Manu">
+                        <div><a href="page1_2.html">捏臉系統</a></div>
+                        <div><a href="page1_4.html">天賦系統</a></div>
+                    </div>
+                    <div><a href="page2.html">媒體牆</a></div>
+                    <div><a href="page3.html">建議配備</a></div>
+                    <div><a href="page4.html">開發商簡介</a></div>
+                    <div><a href="page5.html">購買連結</a></div>
+                    <div><a href="page6.html" >關於我們</a></div>
+                </div>
+        </header>
+        <main class="item">
+            <span class="title">捏臉系統<br><span>請往下滑🔽</span></span>
+            <hr width="100%">
+            <img class="face" data-aos="fade-right"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-sine" src="./assets/media/img/face/face1.jpg" alt="">
+            <img class="face" data-aos="fade-left"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-sine" src="./assets/media/img/face/face2.jpg" alt="">
+            <img class="face" data-aos="fade-right"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-sine" src="./assets/media/img/face/face3.jpg" alt="">
+            <img class="face" data-aos="fade-left"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-sine" src="./assets/media/img/face/face4.jpg" alt="">
+            <img class="face" data-aos="fade-right"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-sine" src="./assets/media/img/face/face5.jpg" alt="">
+
+            <!-- <div class="faces">
+                <img src="./assets/media/img/face/face1.jpg" alt="" class="faceL">
+                <img src="./assets/media/img/face/face2.jpg" alt="" class="faceR">
+                <img src="./assets/media/img/face/face3.jpg" alt="" class="faceL">
+                <img src="./assets/media/img/face/face4.jpg" alt="" class="faceR">
+                <img src="./assets/media/img/face/face5.jpg" alt="" class="faceL">
+            </div>
+            <div class="masks">
+                <div class="mask"
+                    style="left: 0vw; animation-name: none; clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);">
+                </div>
+                <div class="mask"
+                    style="right: 00vw; animation-name: none; clip-path: polygon(25% 0%, 100% 0%, 100.1% 99.3%, 0% 100%);">
+                </div>
+                <div class="mask"
+                    style="left: 0vw; animation-name: none; clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);">
+                </div>
+                <div class="mask"
+                    style="right: 0vw; animation-name: none; clip-path: polygon(25% 0%, 100% 0%, 100.1% 99.3%, 0% 100%);">
+                </div>
+                <div class="mask"
+                    style="left: 0vw; animation-name: none; clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);">
+                </div>
+            </div> -->
+
+        </main>
+        <footer class="item">
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
+<script src="./assets/js/menu.js"></script>
+<script src="./assets/js/page1_2.js"></script>

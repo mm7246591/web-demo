@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Members Introduction</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        a{
+                font-size: 20px;
+                color: white;
+
+            }
+        .container{
+            display: flex;
+            background-color: rgb(89, 91, 93);
+            width:100%;
+            height: 130vh;
+            flex-direction: column;
+        }
+        .header{
+           
+            opacity: 50%;
+            display: flex;
+            background-color: rgb(217, 219, 223);
+            width: 100%;
+            height:25vh;
+            font-size: 35px;
+            justify-content: center;
+            align-items: center;
+            color: rgb(48, 46, 46);
+        }
+        .footer{
+                width: 100%;
+                height: 10vh;
+                font-size: 15px;
+                background-color: rgb(116, 115, 117);
+                text-align: center;
+                position: fixed;
+                bottom: 0px; 
+            }
+
+            .home{
+                width: 10vh;
+                height: 10vh;
+                font-size: 15px;
+                background-color: rgb(186, 184, 189);
+                text-align: center;
+                position: fixed;
+                bottom: 9vh;
+                border-radius: 50%;
+                text-align: center;
+                background-color: black;
+                justify-content: space-around;
+                display: flex;
+                border: 4px solid rgb(186, 185, 187);
+                padding: 5px 0;
+                justify-content: center;
+            align-items: center;
+            }
+            .main{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                justify-content: space-evenly;
+                height:80vh;
+
+            }
+            .introduction{
+                display: flex;
+                flex-direction: column;
+                border: solid black 2px;
+                width:30vw;
+                height:60vh;
+                font-size: 20px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                background-color:rgb(186, 185, 187);
+            }
+            .subItem_img{
+                flex-basis: calc(100%/6);
+            }
+            .introduction:hover{
+                border: 5px dashed  black;
+                opacity: 70%;
+            }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Members Introduction</div>
+   <div class="main">
+     <div class="introduction">
+        <div class="subItem_img"><img src="葉安桁照片.jpg" width="200" height="200"></div> 
+        姓名：葉安桁
+        <br>科系：元智大學資傳系設計組
+        <br>年級：ㄧ年級
+        <br>星座：天蠍座
+        <br>興趣：養倉鼠 畫畫
+    </div>
+     <div class="introduction">
+        <div class="subItem_img"><img src="莊喬茵照片.jpg" width="200" height="200"></div> 
+        姓名：莊喬茵
+        <br>科系：元智大學資傳系設計組
+        <br>年級：ㄧ年級
+        <br>星座：天秤座
+        <br>興趣：追劇 追星 畫畫
+     </div>
+   </div>
+        
+    <div class="footer">Member:<p>1103249 yiponhang: onhang1030@yahoo.com</p>
+        <p>1111829 JoanneChuang: joannechuang1021@gmail.com </p>
+        <div class="home"><a href="index.html">HOME</a></div>
+</body>
+</html>

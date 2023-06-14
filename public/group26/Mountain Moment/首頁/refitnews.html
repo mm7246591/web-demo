@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale">
+		<title>Mountain Moment</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="icon" href="logo.jpg">
+	</head>
+	<style>
+		a:link {
+			color:#081f7b;
+			text-decoration:none;
+		}
+		a:visited {
+			color:#1034c7;
+			text-decoration:none;
+		}
+		a:hover {
+			color:#051140;
+			text-decoration:none;
+		}
+	</style>
+	<body style="background-color: rgb(203, 218, 203);">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a href="main.html"><img src="logo.jpg" alt="logo" style="width: 13%;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link " href="#">選單<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">品牌</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown1">
+							<a class="dropdown-item" href="https://www.thenorthface.com/en-us?_sr=1">The North Face</a>
+							<a class="dropdown-item" href="https://arcteryx.com/ca/zh/">SArc'teryx</a>
+							<a class="dropdown-item" href="https://www.mammut.tw/">Mammut</a>
+							<a class="dropdown-item" href="https://en.montbell.jp/">montbell</a>
+							<a class="dropdown-item" href="https://decathlon.tw/">迪卡儂</a>
+							<a class="dropdown-item" href="https://www.columbiasportswear.com.tw/">Columbia</a>
+							<a class="dropdown-item" href="https://www.blackdiamondequipment.com.tw/">Black Diamond</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">登山用品</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown10">
+							<a class="dropdown-item" href="https://24h.pchome.com.tw/store/DEBQ4P">帳篷</a>
+							<a class="dropdown-item" href="https://www.momoshop.com.tw/category/DgrpCategory.jsp?d_code=1601700594&osm=googleKw&utm_source=google&utm_medium=traffic_dsa_MaxClicks&utm_content=01&gclid=CjwKCAjw4ZWkBhA4EiwAVJXwqQQYyW93zep4imMDhCfaOo5ofdh4hVl-rNqQMJwiE-3Cn8YftphoCRoCDdgQAvD_BwE">摺疊椅</a>
+							<a class="dropdown-item" href="https://www.momoshop.com.tw/category/DgrpCategory.jsp?d_code=1601700020&p_orderType=6&showType=chessboardType&osm=googleKw&utm_source=google&utm_medium=traffic_dsa_MaxClicks">睡袋</a>
+							<a class="dropdown-item" href="https://24h.pchome.com.tw/store/DXAUAU">頭燈</a>
+							<a class="dropdown-item" href="https://24h.pchome.com.tw/store/DXAU8D">登山爐</a>
+							<a class="dropdown-item" href="https://shopee.tw/search?keyword=%E6%A9%9F%E8%BB%8A%E6%94%B9%E7%BC%B8">露營燈</a>
+						</div>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link " href="人身部品.html">人身部品<span class="sr-only">(current)</span></a>
+					</li>
+				<li class="nav-item">
+						<a class="nav-link " href="help.html">關於<span class="sr-only">(current)</span></a>
+					</li>
+				</ul>
+			</div>
+			<a href="main.html"><img src="logo.jpg" alt="logo" style="width: 13%;float: right;"></a>
+		</nav>
+		
+		<center>
+		<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" style="width: 90%;">
+			<div class="carousel-inner">
+				<div class="carousel-item active" data-interval="3000">
+					<img src="runimg\1.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item" data-interval="3000">
+					<img src="runimg\2.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item" data-interval="3000">
+					<img src="runimg\3.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item" data-interval="3000">
+					<img src="runimg\4.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item" data-interval="3000">
+					<img src="runimg\5.jpg" class="d-block w-100" alt="...">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		</center>
+		
+		<div class="list-group list-group-flush" style="border-color: black;width: 100%;">
+			<center>
+			<h1>
+			推薦商品
+			</h1>
+			</center>
+			<div class="card-deck">
+				<div class="card">
+					<img src="newsimg\1.jpg" class="card-img-top" alt="...">
+					<a href="https://www.pcstore.com.tw/powerbus/M53503933.htm">
+						<div class="card-body">
+							<h4 class="card-title">
+								百年歷史的美國戶外休閒品牌Coleman，其氣侯達人系列的BREATHE圓頂帳300 IV可以說是圓頂帳篷類型的熱門款。
+							</h5>
+							<p class="card-text">
+								300 IV的耐水壓係數高達3000mm，抵禦各種雨勢游刃有餘，鋁合金營柱既提高結構韌度也大幅延長使用壽命，再加上面料使用棉混紡素材，使空氣更流通及減少結露效果，極佳的舒適性與功能性為它帶來好口碑，網上討論露營帳篷的選擇時往往得到Mobile01與Ptt不少網友們的推薦。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							Coleman
+						</small>
+					</div>
+				</div>
+				<div class="card">
+					<img src="newsimg\2.jpg" class="card-img-top" alt="...">
+					<a href="https://www.snowpeak.com.tw/SalePage/Index/6106279?lang=zh-TW">
+						<div class="card-body">
+							<h4 class="card-title">
+								這款SDE-003RH Amenity Dome 寢室帳以抗風性與舒適性為設計重點
+							</h5>
+							<p class="card-text">
+								被譽為「露營界的LV」的日本戶外高級品牌Snow Peak，可以容納5至6人，寬敞的前庭空間與側門設計，增加出入方便性，也提高通風面積，戶外悶熱時可以減少黏膩不適感。1800mm的耐水壓係數也已能應付大多數的雨勢，且搭設方式簡易，若預算許可，是很適合新手作為露營帳篷的入門款。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							Snow Peak
+						</small>
+					</div>
+				</div>
+				<div class="card">
+					<img src="newsimg\3.jpg" class="card-img-top" alt="...">
+					<a href="https://www.motobuy.com.tw/p_info.php?t1=130&p=5863">
+						<div class="card-body">
+							<h4 class="card-title">
+								Rhino 犀牛 極輕量露營椅
+							</h5>
+							<p class="card-text">
+								採用7075航太鋁合金與 600D特多龍加密布製成加密網布, 久坐不易悶熱。附拉鏈收納包。輕巧堅固耐用，適用於露營、登山、旅行、釣魚用，輕鬆組裝、易收、好攜帶。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							Rhino
+						</small>
+					</div>
+				</div>
+			</div>
+			<div class="card-deck">
+				<div class="card">
+					<img src="newsimg\4.jpg" class="card-img-top" alt="...">
+					<a href="https://24h.pchome.com.tw/prod/DEBQ72-A900AY2EU">
+						<div class="card-body">
+							<h4 class="card-title">
+								LIFECODE 純棉可水洗秋冬可拼接睡袋
+							</h5>
+							<p class="card-text">
+								LIFECODE 將本款版型加大為85cm，讓身材較壯碩的人亦能有更寬敞舒適的睡眠體驗。睡袋內部的中空棉則是採用一體成形的3D 厚片結構，除了重量輕盈之外，棉絮都能維持均勻分布而不會跑型。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							LIFECODE
+						</small>
+					</div>
+				</div>
+				<div class="card">
+					<img src="newsimg\5.jpg" class="card-img-top" alt="...">
+					<a href="https://www.coleman.com.tw/products/coleman-%E5%86%92%E9%9A%AA%E8%80%85%E7%B4%93%E5%A3%93%E7%9D%A1%E8%A2%8B-c0-cm-38772m000">
+						<div class="card-body">
+							<h4 class="card-title">
+								Coleman 冒險者紓壓睡袋CM-38772M000
+							</h5>
+							<p class="card-text">
+								其最大特色是空間非常寬大，睡袋寬邊可達150cm，正好與市售的氣墊床規格以及休旅車內部的寬度相當，輕鬆滿足車宿露營的願望，兩位成人共用也可享有舒暢的伸展空間。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							Coleman
+						</small>
+					</div>
+				</div>
+				<div class="card">
+					<img src="newsimg\6.jpg" class="card-img-top" alt="...">
+					<a href="https://www.metroasis.com.tw/SalePage/Index/8158686?garefersrc=HotsaleInCategory&gclid=CjwKCAjw4ZWkBhA4EiwAVJXwqSUWtriFsoXctNtmeagNieX0BRvSQFxSFOd44u_k5ogkicH-Xea1gBoCl0wQAvD_BwE">
+						<div class="card-body">
+							<h4 class="card-title">
+								【Black Diamond】Spot 高防水頭燈620672(燈具露營燈照明設備)
+							</h5>
+							<p class="card-text">
+								無段式亮度調整，更順暢無頓點，亮度記憶功能，開啟時會記憶關閉之前的亮度，具有閃爍安全警示、防誤觸鎖定等功能，多面光學效率鏡片技術，優化照明效率，剩餘電量顯示，IPX8高規格完全防水等級，適合百岳行程及各種戶外活動
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							Black Diamond
+						</small>
+					</div>
+				</div>
+			</div>
+			<div class="card-deck">
+				<div class="card">
+					<img src="newsimg\7.jpg" class="card-img-top" alt="...">
+					<a href="https://www.sototaiwan.com.tw/products/sod310">
+						<div class="card-body">
+							<h4 class="card-title">
+								來自 SOTO 的產品，研發了獨家的缽狀爐頭設計
+							</h5>
+							<p class="card-text">
+								它可以有效阻斷周圍來風的侵入以防爐火熄滅，在防風的表現上可說相當卓越。除此之外，爐頭內部設有特殊的穩壓裝置，即使在零度以下的酷寒環境也不會影響火力，甚至能以精確的控火完成一道道美味的料理。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							SOTO
+						</small>
+					</div>
+				</div>
+				<div class="card">
+					<img src="newsimg\8.jpg" class="card-img-top" alt="...">
+					<a href="http://www.vikingchalet.com/~server/index.php?page=shop.product_details&flypage=shop.flypage&product_id=5076&category_id=40&manufacturer_id=0&option=com_virtuemart&Itemid=42&vmcchk=1&Itemid=42">
+						<div class="card-body">
+							<h4 class="card-title">
+								能陪你到天涯海角的全方位爐頭 Whisperlite™ International 多燃料汽化爐
+							</h5>
+							<p class="card-text">
+								這款高山爐集泛用性、穩定度和輕量化三大優點於一身，強大的火力搭配多樣化的可用燃油種類，加上收納後可以輕鬆放入2L 鍋具攜帶的小尺寸，無論要去極寒地帶或是單一燃料難以取得的國家旅遊都相當方便。
+							</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							MSR
+						</small>
+					</div>
+				</div>
+				<div class="card">
+					<img src="newsimg\9.jpg" class="card-img-top" alt="...">
+					<a href="https://www.doinggood.com.tw/products/ledlenser-ml4-yellow-light-green?gclid=CjwKCAjw4ZWkBhA4EiwAVJXwqXCH8lLOzNlQzebHZ9dcRf3REalaYXWTgVCf0bQTFZ3Q65ZIA8mwThoC73sQAvD_BwE&utm_campaign=SA-GSA&utm_content=20194600000&utm_medium=shopline-cpc&utm_source=google&utm_term=151081668202">
+						<div class="card-body">
+							<h4 class="card-title">
+								LEDLENSER ML4 專業充電式照明燈/露營燈 
+							</h5>
+							<p class="card-text">
+								提供 360 度無死角泛光，多段亮度及閃爍、紅光功能可調，最高 300 流明。微型結構光學透鏡，內附一顆 14500 充電電池，也可用三號 AA 電池。登山掛勾設計方便懸掛，磁吸式充電系列。IP66 防水防塵，商檢局認證合格(BSMI) R45303。						</p>
+						</div>
+					</a>
+					<div class="card-footer">
+						<small class="text-muted">
+							LEDLENSER
+						</small>
+					</div>
+				</div>
+			</div>
+			<footer class="footer mt-auto py-3" style="background-color: rgb(164, 179, 164);">
+				<div class="container">
+					<span class="text-muted d-flex justify-content-center">
+						Copyright © 2023 元智大學 Yuan Ze University
+				桃園市 320315 中壢區遠東路 135 號 - 電話：(03) 4638800
+					</span>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

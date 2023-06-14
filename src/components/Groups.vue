@@ -145,10 +145,10 @@ watchEffect(() => {
             class="flex flex-col justify-center items-center lg:my-[2vh] md:my-[2vh] lg:w-[25vw] md:w-[80vw] lg:mx-[0.5vw]">
             <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleRoute">
                 <a v-if="group.link" :href="group.link">
-                    <img src="https://fakeimg.pl/300/" class="object-cover w-full h-full" />
+                    <img :src="group.img" class="object-cover w-full h-full" />
                 </a>
                 <a v-else>
-                    <img src="https://fakeimg.pl/300/" class="object-cover w-full h-full" alt="未交作業" />
+                    <img :src="group.img" class="object-cover w-full h-full" alt="未交作業" />
                 </a>
                 <div class="group md:text-base lg:text-lg font-bold">
                     {{ group.number }}

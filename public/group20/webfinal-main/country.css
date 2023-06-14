@@ -1,0 +1,393 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* nav */
+.row{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color:#CCC4BB;
+}
+
+.col{
+    display: flex;
+    width: 15vw;
+    height: 10vh;
+    /* border: 1px dashed pink;
+    background-color: aquamarine; */
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+.logo{
+    padding-left: 5vh;
+    height: 10vh;
+}
+
+a{
+    color: black;
+    text-decoration:none;
+}
+
+/* map */
+.map{
+    /* padding-left:3% ; */
+    width: 100%;
+    height: 150vh;
+    background-color: #F6EFE8;
+    /* border: 10px dashed black; */
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* margin-bottom: 10vh; */
+}
+
+.mapimg{
+    width: 95%;
+    height: 80%;
+    box-shadow: 0rem 0.5rem 1rem 1rem rgb(77, 54, 54);
+    
+    
+}
+
+/* America */
+.box{
+    position: absolute;
+    top: 51rem;
+    right: 12rem;
+} 
+/* 阿根廷 */
+.box-1{
+    position: absolute;
+    top: 41rem;
+    right: 9rem;
+} 
+/* 巴西 */
+.box2{
+    position: absolute;
+    top: 46rem;
+    right: 10rem;
+}
+/* 巴拉圭 */
+.box3{
+    position: absolute;
+    top: 30.7rem;
+    right: 16rem;
+}
+/* 牙買加 */
+.box4{
+    position: absolute;
+    top: 33rem;
+    right: 18rem;
+}
+/* 尼加拉瓜 */
+.box5{
+    position: absolute;
+    top: 41rem;
+    right: 16rem;
+}
+/* 祕魯 */
+.box6{
+    position: absolute;
+    top: 47rem;
+    right: 14rem;
+}
+/* 智利 */
+.box7{
+    position: absolute;
+    top: 34rem;
+    right: 12rem;
+}
+/* 委內瑞拉 */
+.box8{
+    position: absolute;
+    top: 30rem;
+    right: 43.5rem;
+}
+/* 夏威夷 */
+.box9{
+    position: absolute;
+    top: 28rem;
+    right: 25rem;
+}
+/* 墨西哥 */
+.box10{
+    position: absolute;
+    top: 21.5rem;
+    right: 24.5rem;
+}
+/* 美國 */
+.box11{
+    position: absolute;
+    top: 36rem;
+    right: 14.5rem;
+}
+/* 哥倫比亞 */
+/* America */
+
+/* Asia */
+.as{
+    position: absolute;
+    top: 27rem;
+    right: 0.5rem;
+} 
+/* 日本 */
+.as1{
+    position: absolute;
+    top: 27.5rem;
+    right: 7rem;
+}
+/* 南韓 */
+.as2{
+    position: absolute;
+    top: 34rem;
+    right: 9.5rem;
+}
+/* 台灣 */
+.as3{
+    position: absolute;
+    top: 27.5rem;
+    right: 17.5rem;
+}
+/* 中國 */
+.as4{
+    position: absolute;
+    top: 39rem;
+    right: 9rem;
+}
+/* 菲律賓 */
+.as5{
+    position: absolute;
+    top: 39rem;
+    right: 15rem;
+}
+/* 越南 */
+.as6{
+    position: absolute;
+    top: 35rem;
+    right: 21rem;
+}
+/* 緬甸 */
+.as7{
+    position: absolute;
+    top: 37rem;
+    right: 19rem;
+}
+/* 泰國 */
+.as8{
+    position: absolute;
+    top: 34rem;
+    right: 29rem;
+}
+/* 印度 */
+.as9{
+    position: absolute;
+    top: 43rem;
+    right: 18rem;
+}
+/* 馬來西亞 */
+.as10{
+    position: absolute;
+    top: 26rem;
+    right: 50rem;
+}
+/* 土耳其 */
+.as11{
+    position: absolute;
+    top: 9rem;
+    right: 23rem;
+}
+/* 俄羅斯 */
+/* Asia */
+
+/* Europe */
+.eu{
+    position: absolute;
+    top: 35rem;
+    right: 41rem;
+} 
+/* 法國 */
+.eu1{
+    position: absolute;
+    top: 38.5rem;
+    right: 32rem;
+}
+/* 義大利 */
+.eu2{
+    position: absolute;
+    top: 25rem;
+    right: 45rem;
+}
+/* 英國 */
+.eu3{
+    position: absolute;
+    top: 10rem;
+    right: 29rem;
+}
+/* 瑞典 */
+.eu4{
+    position: absolute;
+    top: 34rem;
+    right: 31rem;
+}
+/* 奧地利 */
+.eu5{
+    position: absolute;
+    top: 35rem;
+    right: 35rem;
+}
+/* 瑞士 */
+.eu6{
+    position: absolute;
+    top: 32rem;
+    right: 30rem;
+}
+/* 捷克 */
+.eu7{
+    position: absolute;
+    top: 30rem;
+    right: 34rem;
+}
+/* 德國 */
+.eu8{
+    position: absolute;
+    top: 28rem;
+    right: 37rem;
+}
+/* 荷蘭 */
+.eu9{
+    position: absolute;
+    top: 10rem;
+    right: 28rem;
+}
+/* 瑞典 */
+.eu10{
+    position: absolute;
+    top: 43rem;
+    right: 24rem;
+}
+/* 希臘 */
+.eu11{
+    position: absolute;
+    top: 43rem;
+    right: 13rem;
+}
+/* 土耳其 */
+/* Europe */
+/* .eu,.eu1,.eu2,.eu4,.eu5,.eu6,.eu7,.eu8,.eu9,.eu10,.eu11{
+    position: inherit;
+} */
+/* .eu:hover.content{
+    /* display: block; */
+    /* position: absolute;
+    top: 0rem;
+    left: 0rem;
+    background-color: black;
+    width: 100px;
+    
+} */ 
+.place{
+    width: 5%;
+}
+/* .content{
+    visibility: hidden;
+    background-color: #F6EFE8;
+    width: 10%;
+    display: none;
+} */
+
+/* desserts */
+.desserts-row {
+    display: flex;
+    width: 100%;
+    height: 150vh;
+    background-color: #F6EFE8;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;;
+    top: 160vh;
+}
+
+.dessert{
+    display: block;
+    width: 21vw;
+    height: 40vh;
+    /* border: 1px dashed black; */
+    background-color: #DAD2C2;
+    border-radius: 10px;
+    
+}
+
+.img{
+    width: 21vw;
+    height: 30vh;
+    /* border: 1px dashed black; */
+    border-radius: 5px;
+}
+
+.word{
+    display: flex;
+    width: 21vw;
+    height: 10vh;
+    top: 30vh;
+    /* border: 1px dashed black; */
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+}
+
+.location{
+    width: 3vw;
+    height: 3vw;
+}
+
+.dessert-img{
+    padding: 1vh;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 20vh;
+    background-color:#CCC4BB;
+    top: 310vh;
+}
+
+.row2{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    /* background-color:#ac805a; */
+    align-items: center;
+    justify-content: center;
+
+}
+
+.col1{
+    display: flex;
+    width: 15vw;
+    height: 10vh;
+    /* border: 1px dashed pink;
+    background-color: aquamarine; */
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+.info{
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+}
