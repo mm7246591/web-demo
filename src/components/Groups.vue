@@ -16,6 +16,8 @@ interface Group {
     number: string
     img: string
     name: string
+    pdf: string
+    ppt: string
     link: string
     favorite: boolean
 }
@@ -143,21 +145,41 @@ watchEffect(() => {
     <div class="content flex justify-evenly items-center flex-wrap">
         <div v-for="group of filterGroup" :key="group.id"
             class="flex flex-col justify-center items-center lg:my-[2vh] md:my-[2vh] lg:w-[25vw] md:w-[80vw] lg:mx-[0.5vw]">
-            <div class="box w-full relative overflow-hidden cursor-pointer" @click="handleRoute">
-                <a v-if="group.link" :href="group.link">
+            <div class="box w-full relative overflow-hidden" @click="handleRoute">
+                <div v-if="group.link">
                     <img :src="group.img" class="object-cover w-full h-full" />
-                </a>
-                <a v-else>
+                </div>
+                <div v-else>
                     <img :src="group.img" class="object-cover w-full h-full" alt="未交作業" />
-                </a>
-                <div class="group md:text-base lg:text-lg font-bold">
-                    {{ group.number }}
+                </div>
+                <div class="group flex flex-col md:text-base lg:text-lg">
+                    <div class="font-bold">
+                        {{ group.number }}
+                    </div>
+                    <div class="w-full flex justify-evenly mb-[0.5vh]">
+                        <a v-if="group.link" :href="group.link">
+                            <div>
+                                進入網站
+                            </div>
+                        </a>
+                        <a v-if="group.link" :href="group.pdf">
+                            <div>
+                                報告書PDF
+                            </div>
+                        </a>
+                        <a v-if="group.link" :href="group.ppt">
+                            <div>
+                                投影片PDF
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="w-full flex justify-between  mt-[1vh]">
                 <div class="team-mate w-[90%] md:text-base lg:text-sm">{{
                     group.name
                 }}</div>
+
                 <div v-if="group.favorite" class="w-[32px]">
                     <img src="../assets/img/fill-star.png" class="cursor-pointer" @click.stop="handleAddFavorite(group.id)">
                 </div>
@@ -178,16 +200,21 @@ watchEffect(() => {
     background: #F2ECE0;
 }
 
+.box:hover.box .group {
+    transform: translateY(0%);
+}
+
 .box .group {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 5vh;
     bottom: 0;
     left: 0;
-    color: gray;
+    color: black;
+    transform: translateY(100%);
+    transition: .5s;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 5px rgba(255, 255, 255, .9);
 }

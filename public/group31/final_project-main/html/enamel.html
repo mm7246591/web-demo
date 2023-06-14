@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../css/enamel.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/post-impressionism.js"></script>
+
+    <title>琺瑯彩主義</title>
+    <script src="../jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/8a70555dca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <script>BackToTop()</script>
+    <script>navigate()</script>
+    <script>GoToTop()</script>
+
+    <script>hideImage()</script>
+    <script>showImage()</script>
+    <script>scrollToPic()</script>
+    <script>handleButtonClick()</script>
+    <script>All()</script>
+
+</head>
+<body>
+    <div class="bigContainer">
+        <div class="header">
+          <a href="#top">
+            <div class="logo">
+          </a>
+          <img src="../img/logo.png" alt="logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="pointillism.html">點描畫派</a></li>
+            <li><a href="post-impressionism.html">後印象派</a></li>
+            <li><a href="enamel.html">琺瑯彩主義</a></li>
+            <li><a href="japanese.html">日本主義</a></li>
+            <li><a href="realism.html">現實主義</a></li>
+            <li><a href="impressionism.html">印象派</a></li>
+            <li><a href="new-impressionism.html">新印象派</a></li>
+          </ul>
+        </nav>
+        
+        <div id="top"></div>
+      </div>
+
+      <div class="containerbgc">
+        <div class="container">
+            <i class="fa fa-h-square" aria-hidden="true"></i>
+            <a href="../html/index.html">首頁</a>
+            >
+            <a href="../html/enamel.html">琺瑯彩主義</a>
+            <h2>琺瑯彩主義</h2>
+            <p style="font-size: 16px; letter-spacing: 2px;">共9筆資料</p>
+
+
+            <div class="masonry">
+                <div class="item">
+                    <img src="../img/enamel1.jpg" onclick="showImage(this)" id="e1">
+
+                    <p>Breton Women</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1888</span></p>
+                </div>
+
+                <div class="item">
+                    <img src="../img/enamel2.jpg" onclick="showImage(this)" id="e2">
+                    <p>Ladies of Arles (Memories of the Garden at Etten)</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1888</span></p>
+                </div>
+                <div class="item">
+                    <img src="../img/enamel3.jpg" onclick="showImage(this)" id="e3">
+                    <p>Spectators in the Arena at Arles</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1888</span></p>
+                </div>
+                <div class="item">
+                    <img src="../img/enamel4.jpg" onclick="showImage(this)" id="e4">
+                    <p>Paul Gauguin (Man in a Red Beret)</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1888</span></p>
+                </div>
+                <div class="item">
+                    <img src="../img/enamel5.jpg" onclick="showImage(this)" id="e5">
+                    <p>Peasant Woman Cutting Straw after Millet</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1889</span></p>
+                </div>
+
+                <div class="item">
+                    <img src="../img/enamel6.jpg" onclick="showImage(this)" id="e6">
+                    <p>Two Little Girls</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1890</span></p>
+                </div>
+                <div class="item">
+                    <img src="../img/enamel7.jpg" onclick="showImage(this)" id="e7">
+                    <p>The Sower Outskirts of Arles in the Background</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1888</span></p>
+                </div>
+                <div class="item">
+                    <img src="../img/enamel8.jpg" onclick="showImage(this)" id="e8">
+                    <p>Mount Gaussier with the Mas de Saint-Paul</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1889</span></p>
+                </div>
+                <div class="item">
+                    <img src="../img/enamel9.jpg" onclick="showImage(this)" id="e9">
+                    <p>Landscape with House and Ploughman</p>
+                    <p><span class="blue">梵谷．</span><span class="gray">1889</span></p>
+                </div>
+                
+            </div>
+  
+            <div id="overlays" onclick="hideImage()">
+                <img id="overlays-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="btnBlock" id="btnBlock13">
+            <div class="BlockLeft">
+                <div class="btnPic"><img src="../img/life.png" alt=""></div>
+            </div>
+            <div class="BlockRight">
+                <div class="btnContent">
+                    <p><strong>生平事蹟</strong></p>
+                    <p>梵谷的一些事蹟。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btnBlock" id="btnBlock14">
+            <div class="BlockLeft">
+                <div class="btnPic"><img src="../img/search.png" alt=""></div>
+            </div>
+            <div class="BlockRight">
+                <div class="btnContent">
+                    <p><strong>尋找畫作</strong></p>
+                    <p>我們來幫您尋找畫作吧!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btnBlock" id="btnBlock15">
+            <div class="BlockLeft">
+                <div class="btnPic"><img src="../img/question.png" alt=""></div>
+            </div>
+            <div class="BlockRight">
+                <div class="btnContent">
+                    <p><strong>常見問題</strong></p>
+                    <p>大家常見的一些問題!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btnBlock" id="btnBlock16">
+            <div class="BlockLeft">
+                <div class="btnPic"><img src="../img/contact.png" alt=""></div>
+            </div>
+            <div class="BlockRight">
+                <div class="btnContent">
+                    <p><strong>聯絡我們</strong></p>
+                    <p>告訴我們您的需求!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footerDown">
+        <div class="DownLeft">
+            <h2>G18線上畫廊</h2>
+            <p>「每一幅畫都會遇到喜歡的人」</p>
+            <div class="time">
+                <div class="timeLeft">
+                    <p>開放<br>時間</p>
+                </div>
+                <div class="timeRight">
+                    <p>週五</p>
+                    <P>10:00 - 12:00</P>
+                </div>
+            </div>
+        </div>
+        <div class="DownMiddle">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.874207349239!2d121.26282341500504!3d24.97039413400219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f5490d43fcd%3A0x186eb5a7e52b332b!2z5YWD5pm65aSn5a24!5e0!3m2!1szh-TW!2stw!4v1683474407233!5m2!1szh-TW!2stw"
+                width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>"
+        </div>
+        <div class="DownRight">
+            <p>G18線上畫廊服務專線</p>
+            <h2>+886-3-463-8880</h2>
+            <p><i>Fax/</i> +886-3-435-4624</p>
+            <p><i>Add/</i> 320桃園市中壢區遠東路135號</p>
+        </div>
+    </div>
+    <button id="scroll-to-top-button">↑</button>
+
+</body>
+</html>

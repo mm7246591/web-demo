@@ -1,0 +1,71 @@
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+  
+  
+  .progress-bar {
+    width: 0%;
+    height: 10px;
+    background-color: #4CAF50;
+  }
+  
+  /* 以下為新增的 CSS */
+  .loading h1 {
+    display: inline-block;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #L {
+    left: calc(50% - 200px);
+  }
+  
+  #O {
+    left: calc(50% - 150px);
+  }
+  
+  #A {
+    left: calc(50% - 100px);
+  }
+  
+  #D {
+    left: calc(50% - 50px);
+  }
+  
+  #I {
+    left: 50%;
+  }
+  
+  #N {
+    left: calc(50% + 50px);
+  }
+  
+  #G {
+    left: calc(50% + 100px);
+  }
+  
+  #dot1 {
+    left: calc(50% + 150px);
+  }
+  
+  #dot2 {
+    left: calc(50% + 175px);
+  }
+  
+  #dot3 {
+    left: calc(50% + 200px);
+  }
+  

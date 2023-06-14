@@ -1,0 +1,422 @@
+html,
+body {
+
+    background-color: #1d1d1d;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.bigContainer {
+    width: 100%;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.logo {
+    width: 270px;
+    height: 100%;
+    padding: 0 70px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    user-select: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* 等比例缩放 */
+}
+
+.container {
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 1750px;
+    /* border: 1px solid red; */
+
+}
+
+.containerbgc {
+    width: 100%;
+    background-color: #FFF;
+}
+
+.container i {
+    margin-top: 45px;
+}
+
+.container a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.masonry {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -10px;
+  }
+  
+  .item {
+    flex: 1 1 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 3px;
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .blue {
+    color: blue;
+  }
+  
+  .gray {
+    color: gray;
+  }
+  
+  #overlays {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+  
+  #overlays-img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+
+
+
+
+.overlay {
+    position: absolute;
+
+    transform: translate(7%, -20%);
+    width: 86%;
+    height: 140px;
+    background-color: #f0f0f0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.footerDown {
+    width: 100%;
+    height: 59vh;
+    /* border: 1px solid orange; */
+    background-color: #1d1d1d;
+    display: flex;
+    flex-direction: row;
+}
+
+.DownLeft {
+    height: 100%;
+    width: 33%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.DownLeft h2 {
+    color: white;
+}
+
+.DownLeft p {
+    color: #d9bdaa;
+}
+
+.time {
+    width: 300px;
+    height: 120px;
+    border: 1px solid #ababab;
+    display: flex;
+    flex-direction: row;
+    color: #ababab;
+}
+
+.timeLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    /* border: 1px solid white; */
+}
+
+.timeLeft p {
+    color: white;
+}
+
+.timeRight p {
+    color: white;
+}
+
+.timeRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    border-left: 1px solid #ababab;
+}
+
+.DownMiddle {
+    height: 100%;
+    width: 34%;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.DownRight {
+    height: 100%;
+    width: 33%;
+    /* border: 3px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.DownRight p:nth-child(1) {
+    color: #ababab;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.DownRight p:nth-child(3) {
+    color: #ababab;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.DownRight p:nth-child(4) {
+    color: #ababab;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.DownRight i {
+    color: #d9bdaa;
+}
+
+.DownRight h2 {
+    color: white;
+    letter-spacing: 3px;
+}
+
+#scroll-to-top-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    font-weight: bolder;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+#scroll-to-top-button.show {
+    display: block;
+    opacity: 1;
+}
+
+
+.btnBlock {
+    width: 25%;
+    background-color: #f0f0f0;
+    margin: 0 50px;
+    /* border: 1px solid red; */
+    display: flex;
+
+}
+
+.BlockLeft {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnPic {
+    max-width: 100%;
+}
+
+.btnPic img {
+    max-width: 100%;
+    object-fit: contain;
+
+}
+
+.BlockRight {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid yellow; */
+}
+
+.BlockRight p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.BlockRight p:first-of-type {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+    animation: none;
+}
+
+.btnBlock {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* 当前hover的btnBlock块设置为白色背景色和红色文本 */
+.btnBlock:hover {
+
+    color: #e7a26e;
+    cursor: pointer;
+}
+
+/* 当前btnBlock块中p标签里的带有strong标签的文本前加上>> */
+.btnBlock:hover>.BlockRight>p>strong::before {
+    content: ">> ";
+}
+
+/* 隐藏所有btnBlock块中p标签里的带有strong标签的文本 */
+.btnBlock>.BlockRight>p>strong {
+    visibility: hidden;
+}
+
+/* 显示当前hover的btnBlock块中p标签里的带有strong标签的文本 */
+.btnBlock:hover>.BlockRight>p>strong {
+    visibility: visible;
+}
+
+.nextPage{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+}
+.nextPage a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nextPage a:hover {
+    background-color: #ccc;
+  }
+#thispage{
+    background-color: #ddd;
+}
+#thispage:hover{
+    background-color: #ccc;
+}
