@@ -17,7 +17,7 @@ import ECharts from "vue-echarts";
 library.add(faMagnifyingGlass, faBars);
 library.add(faStar as any);
 
-const bootstarap = async () => {
+const Bootstrap = async () => {
   const app = createApp(App);
   setupRouter(app);
   setupRouterGuard(router);
@@ -27,4 +27,4 @@ const bootstarap = async () => {
   app.mount("#app");
 };
 
-bootstarap();
+Bootstrap();
